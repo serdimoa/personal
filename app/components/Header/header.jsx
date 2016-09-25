@@ -4,11 +4,13 @@
 
 import React from 'react';
 import Navigation from '../Navigation/navigation';
+import Intro from '../Intro/intro';
 
 function Header() {
   return (
     <header>
       <Navigation />
+      <Intro />
     </header>
   );
 }

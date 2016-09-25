@@ -5,28 +5,76 @@
     1) Стандартные
     2) Header
       2.1) Навигация
+      2.2) Интро
+    3) Обо мне
 */
 // 1) Стандартные
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   position: relative;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -o-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1;
+  font-size: 16px;
 }
 
 // 2) Header
 header {
-  background: $color-dark-blue;
+  background: $color-light-blue;
+  position: relative;
+  height: 100%;
 }
 
 // 2.1) Навигация
 .navigation {
-  max-width: 1170px;
+  max-width: 1080px;
   margin: 0 auto;
   display: block;
+  position: relative;
   height: 50px;
-  img {
+  padding: 20px;
+  .logo {
     float: left;
-    margin-left: 25px;
-    height: inherit;
+    svg {
+      float: left;
+      .fil0 {
+        fill: $color-white;
+      }
+      &:hover {
+        cursor: pointer;
+        .fil0 {
+          fill: $color-dark-blue;
+        }
+      }
+    }
+    &__text {
+      color: $color-white;
+      font-size: 16px;
+      margin-top: 5px;
+      line-height: 22.5px;
+      font-family: $font-title;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    &__job {
+      line-height: 22.5px;
+      color: $color-white;
+      font-size: 16px;
+      font-family: $font-title;
+    }
   }
+
   ul {
     margin: 0;
     li {
@@ -35,11 +83,168 @@ header {
       padding: 15px;
       a {
         text-transform: uppercase;
-        font-size: 40px;
+        font-size: 13px;
         color: $color-white;
+        font-weight: 700;
         text-decoration: none;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
       }
     }
   }
 
+}
+
+// 2.2) Интро
+.intro {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  text-align: center;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
+  .vAlign {
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+  }
+  h1 {
+    font-size: 2.5em;
+    font-family: $font-title;
+    color: $color-white;
+    text-align: center;
+    max-width: 980px;
+    display: block;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    margin: auto auto 0.2em;
+  }
+
+  &__about {
+    margin-bottom: 0.5rem;
+    ul {
+      font-size: 0;
+      width: 100%;
+      margin: auto;
+      text-align: center;
+      line-height: 1.4;
+      li {
+        display: inline-block;
+        vertical-align: middle;
+        font-family: $font-title;
+        font-size: 1.25rem;
+        margin-left: 0.5em;
+        color: $color-white;
+
+        &:before {
+          content: '\00B7';
+          display: inline-block;
+          margin-right: .5em;
+        }
+        &:first-child {
+          margin-left: 0;
+          &:before {
+            content: '';
+          }
+        }
+
+      }
+    }
+  }
+  &__button {
+    background: none;
+    font-size: 1em;
+    border: none;
+    font-family: $font-title;
+    text-transform: uppercase;
+    color: $color-white;
+    display: inline-block;
+    text-align: center;
+    margin: .5em auto 0;
+    padding: 1em 1em .5em;
+    font-weight: bold;
+    position: relative;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    -ms-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: color;
+    -moz-transition-property: color;
+    -ms-transition-property: color;
+    -o-transition-property: color;
+    transition-property: color;
+
+    .material-icons {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      top: 30px;
+    }
+    &:hover {
+      cursor: pointer;
+      color: $color-dark-blue;
+    }
+  }
+}
+
+// 3) Обо мне
+.aboutMe {
+  max-width:720px;
+  margin: auto;
+  h2 {
+    display: block;
+    text-align: left;
+    margin-top: 1.6em;
+    color: $color-dark;
+    font-size: 1.8rem;
+    font-family: $font-title;
+  }
+  h3{
+    display: block;
+    text-align: left;
+    margin-top: 1.6em;
+    color: $color-dark;
+    font-size: 1.3rem;
+    font-family: $font-title;
+  }
+  &__content,&__skills,&__other{
+    margin-top: .8rem;
+    p{
+      font-size:18px;
+      font-family: $font-title;
+      color: $color-dark;
+      word-break: break-word;
+      position: relative;
+      line-height: 1.8;
+      .material-icons{
+        bottom:0;
+        position: absolute;
+      }
+      a{
+        color: $color-dark;
+        text-decoration: none;
+        -webkit-transition-duration: 0.3s;
+        -moz-transition-duration: 0.3s;
+        -ms-transition-duration: 0.3s;
+        -o-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+        -webkit-transition-property: color;
+        -moz-transition-property: color;
+        -ms-transition-property: color;
+        -o-transition-property: color;
+        transition-property: color;
+        &:hover{
+          color: $color-orange;
+        }
+      }
+    }
+  }
 }
