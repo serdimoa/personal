@@ -1,0 +1,45 @@
+@import "Settings";
+
+/*
+  Навигация по scss
+    1) Стандартные
+    2) Header
+      2.1) Навигация
+*/
+// 1) Стандартные
+body {
+  position: relative;
+}
+
+// 2) Header
+header {
+  background: $color-dark-blue;
+}
+
+// 2.1) Навигация
+.navigation {
+  max-width: 1170px;
+  margin: 0 auto;
+  display: block;
+  height: 50px;
+  img {
+    float: left;
+    margin-left: 25px;
+    height: inherit;
+  }
+  ul {
+    margin: 0;
+    li {
+      float: right;
+      display: inline;
+      padding: 15px;
+      a {
+        text-transform: uppercase;
+        font-size: 40px;
+        color: $color-white;
+        text-decoration: none;
+      }
+    }
+  }
+
+}

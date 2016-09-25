@@ -1,11 +1,11 @@
 import React from 'react';
-import {Grid,Cell} from 'react-mdl';
+import Header from './Header/header';
 
 function App() {
   return (
-    <Grid>
-      <Cell col={1}>hello</Cell>
-    </Grid>
+    <div style={{ position: 'relative' }}>
+      <Header />
+    </div>
   );
 }
 

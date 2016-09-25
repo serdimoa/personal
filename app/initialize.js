@@ -1,9 +1,11 @@
 import ReactDOM from 'react-dom';
+import 'react-mdl';
 import React from 'react';
 import {Provider} from 'react-redux';
 import {createStore} from 'redux';
 import counterApp from './reducers';
 import App from './components/App';
+
 
 const store = createStore(
   counterApp, module.hot && module.hot.data && module.hot.data.counter || 0);
@@ -24,19 +26,6 @@ if (module.hot) {
 }
 
 const load = () => {
-  Array.prototype.forEach.call(document.querySelectorAll('.mdl-card__media'), function (el) {
-    const link = el.querySelector('a');
-    if (!link) {
-      return;
-    }
-    const target = link.getAttribute('href');
-    if (!target) {
-      return;
-    }
-    el.addEventListener('click', () => {
-      location.href = target;
-    });
-  });
   ReactDOM.render(
     <Provider store={store}>
       <App />
