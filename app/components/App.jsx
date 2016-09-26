@@ -1,21 +1,15 @@
 import React from 'react';
-import ScrollArea  from 'react-scrollbar';
 import Header from './Header/header';
 import About from './About/about';
+import Contacts from './Contacts/contacts'
 
 function App() {
   return (
-    <ScrollArea
-      speed={0.8}
-      className="area"
-      contentClassName="content"
-      horizontal={false}
-    >
-      <div className="content" style={{ position: 'relative' }}>
-        <Header />
-        <About />
-      </div>
-    </ScrollArea>
+    <div className="content" style={{ position: 'relative' }}>
+      <Header />
+      <About />
+      <Contacts />
+    </div>
   );
 }
 

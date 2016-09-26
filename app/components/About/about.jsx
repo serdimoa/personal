@@ -25,6 +25,29 @@ function About() {
           Понимаю ООП, MVC, различие REST vs RESTful, MySQL, MongoDB, Firebase.
         </p>
       </div>
+      <h3>Гражданство</h3>
+      <div className="aboutMe__other">
+        <p>Гражданин Украины, нахожусь на террритории России в статусе бежанца, в связи с ситуацией на Украине.</p>
+        <p className="grey">В дальнейшем, планирую получение гражданства.</p>
+      </div>
+      <h3>Образование</h3>
+      <div className="aboutMe__readMore">
+        <div className="aboutMe__university">
+          <p><b>Донской Государственный Технический Университет</b></p>
+          <p className="aboutMe__university--state">Бакалавр</p>
+          <p>Информатика и вычислительная техника</p>
+        </div>
+        <div className="aboutMe__university">
+          <p><b>Донецкий Национальный Университет</b></p>
+          <p className="aboutMe__university--state">Бакалавр - Диплом получен в Донецкой Народной Республике</p>
+          <p>Специалист информациональных технологий</p>
+        </div>
+        <div className="aboutMe__university">
+          <p><b>Донецкий Техникум Промышленной Автоматики</b></p>
+          <p className="aboutMe__university--state">Младший специалист</p>
+          <p>Техник по вычислительным машинам</p>
+        </div>
+      </div>
     </Element>
   );
 }

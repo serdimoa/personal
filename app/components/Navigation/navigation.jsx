@@ -25,7 +25,7 @@ function Navigation() {
       </div>
 
       <ul>
-        <NavigationElement url="test1" text="Контакты" />
+        <NavigationElement url="aboutMe" text="Обо мне" />
         <NavigationElement url="#" text="Скилы" />
       </ul>
     </nav>
