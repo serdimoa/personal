@@ -195,6 +195,83 @@ header {
   }
 }
 
+.portfolio{
+  &>*{
+    width: 33.3%;
+  }
+  &__item{
+    min-height:270px;
+    overflow: hidden;
+    position: relative;
+    word-break: break-word;
+    display: inline-block;
+
+    a{
+      display: block;
+      position: relative;
+      text-align: center;
+      img{
+        position: absolute;
+        top:50%;
+        left: 50%;
+        display: block;
+        max-width: 90%;
+        -webkit-transition: .3s transform;
+        -moz-transition: .3s transform;
+        -ms-transition: .3s transform;
+        -o-transition: .3s transform;
+        transition: .3s transform;
+        -webkit-transform: translateX(-50%) translateY(-50%) translateZ(0);
+        -ms-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%) translateZ(0);
+      }
+      &:before{
+        display: block;
+        content: "";
+        width: 100%;
+        padding-top: 62.5%;
+      }
+    } 
+    h3{
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 1em;
+      color: white;
+      line-height: 1.4;
+      background: rgba(0, 0, 0, 0.75);
+      -webkit-transform: translateY(100%) translateZ(0);
+      -ms-transform: translateY(100%);
+      transform: translateY(100%) translateZ(0);
+      -webkit-transition-duration: 0.3s;
+      -moz-transition-duration: 0.3s;
+      -ms-transition-duration: 0.3s;
+      -o-transition-duration: 0.3s;
+      transition-duration: 0.3s;
+      -webkit-transition-property: transform;
+      -moz-transition-property: transform;
+      -ms-transition-property: transform;
+      -o-transition-property: transform;
+      transition-property: transform;
+    }
+    &:hover {
+      h3{
+        -webkit-transform: translateX(0) translateY(0) translateZ(0);
+        -ms-transform: translateX(0) translateY(0);
+        transform: translateX(0) translateY(0) translateZ(0);
+      }
+      img{
+        -webkit-transform: translateX(-50%) translateY(-50%) translateZ(0) scale(.9);
+        -moz-transform: translateX(-50%) translateY(-50%) translateZ(0) scale(.9);
+        -ms-transform: translateX(-50%) translateY(-50%) translateZ(0) scale(.9);
+        -o-transform: translateX(-50%) translateY(-50%) translateZ(0) scale(.9);
+        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(.9);
+      }
+    }
+  }
+}
+
 // 3) Обо мне
 .aboutMe {
   max-width: 720px;
@@ -281,3 +358,4 @@ header {
     }
   }
 }
+
