@@ -1,4 +1,14 @@
 @import "Settings";
+@import "../../node_modules/hover.css/scss/options";
+@import "../../node_modules/hover.css/scss/mixins";
+@import "../../node_modules/hover.css/scss/hacks";
+@import "../../node_modules/hover.css/scss/effects/border-transitions/underline-from-center";
+
+@if $includeClasses {
+	.#{$nameSpace}-underline-from-center {
+		@include underline-from-center();
+	}
+}
 
 /*
   Навигация по scss
@@ -81,6 +91,7 @@ header {
       float: right;
       display: inline;
       padding: 15px;
+      
       a {
         text-transform: uppercase;
         font-size: 13px;
@@ -89,7 +100,17 @@ header {
         text-decoration: none;
         text-overflow: ellipsis;
         overflow: hidden;
+        padding: 10px 0;
         white-space: nowrap;
+        @include underline-from-center();
+        &:before{
+          height: 2px;
+          bottom: 2px;
+          background: $color-dark-blue;
+        }
+        &:hover{
+          cursor: pointer;
+        }
       }
     }
   }
@@ -196,6 +217,7 @@ header {
 }
 
 .portfolio{
+  line-height: 0;
   &>*{
     width: 33.3%;
   }
@@ -212,6 +234,7 @@ header {
       text-align: center;
       img{
         position: absolute;
+        height: 85px;
         top:50%;
         left: 50%;
         display: block;
@@ -233,6 +256,7 @@ header {
       }
     } 
     h3{
+      font-family: $font-title;
       position: absolute;
       left: 0;
       right: 0;
@@ -268,6 +292,11 @@ header {
         -o-transform: translateX(-50%) translateY(-50%) translateZ(0) scale(.9);
         transform: translateX(-50%) translateY(-50%) translateZ(0) scale(.9);
       }
+    }
+    &:after{
+      content: "";
+      clear: both;
+      display: table;
     }
   }
 }

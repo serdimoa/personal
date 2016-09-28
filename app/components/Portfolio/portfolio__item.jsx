@@ -5,6 +5,7 @@ const propTypes = {
   image: PropTypes.string,
   name: PropTypes.string,
   skils: PropTypes.string,
+  color: PropTypes.string,
 };
 
 class PortfolioItem extends React.Component {
@@ -14,7 +15,7 @@ class PortfolioItem extends React.Component {
 
   render() {
     return (
-      <div className="portfolio__item">
+      <div className="portfolio__item" style={{ background: this.props.color }}>
         <a href={this.props.link} rel="noopener noreferrer" target="_blank">
           <img src={`images/${this.props.image}`} alt={this.props.name} className="portfolio__image" />
           <h3>{this.props.skils}</h3>

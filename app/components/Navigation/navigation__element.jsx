@@ -2,7 +2,7 @@
  * Created by User on 25.09.2016.
  */
 
-import React, {PropTypes} from 'react';
+import React, { PropTypes } from 'react';
 import { Link } from 'react-scroll';
 
 const propTypes = {
@@ -17,12 +17,11 @@ class NavigationElement extends React.Component {
 
   render() {
     return (
-      <li>
+      <li className="">
         <Link
           activeClass="active"
-          className="test1"
           to={this.props.url}
-          smooth={true}
+          smooth
           duration={500}
         >{this.props.text}</Link>
       </li>
