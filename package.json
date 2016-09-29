@@ -14,10 +14,10 @@
   "dependencies": {
     "hover.css": "^2.0.2",
     "material-design-lite": "^1.2.1",
-    "react": "^0.14.8",
-    "react-dom": "^0.14.8",
-    "react-mdl": "^1.7.2",
-    "react-redux": "~4.3.0",
+    "re-base": "^2.2.0",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-redux": "^4.4.5",
     "react-scroll": "^1.4.0",
     "redux": "~3.2.1",
     "sass-brunch": "^2.6.3"
