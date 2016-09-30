@@ -20,10 +20,10 @@ function Intro() {
         </div>
         <Link
           className="intro__button"
-          to="aboutMe"
+          to="portfolio"
           smooth
           duration={500}
-        >About Me
+        >Portfolio
           <i className="material-icons">keyboard_arrow_down</i></Link>
       </div>
     </div>

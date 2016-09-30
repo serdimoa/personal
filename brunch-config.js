@@ -11,5 +11,8 @@ exports.config = {
     sass: {
       modules: false,
     },
+    conventions: {
+      ignored: ['node_modules'],
+    },
   },
 };

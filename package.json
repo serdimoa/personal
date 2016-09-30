@@ -12,13 +12,15 @@
     "prod": "brunch build --production"
   },
   "dependencies": {
+    "firebase": "^3.4.1",
     "hover.css": "^2.0.2",
     "material-design-lite": "^1.2.1",
-    "re-base": "^2.2.0",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
+    "react-mixin": "^3.0.5",
     "react-redux": "^4.4.5",
     "react-scroll": "^1.4.0",
+    "reactfire": "^1.0.0",
     "redux": "~3.2.1",
     "sass-brunch": "^2.6.3"
   },

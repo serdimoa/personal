@@ -22,8 +22,10 @@ function About() {
       <div className="aboutMe__other">
         <p>Также имею опыт в разработке на PHP, JAVA(ANDROID) и node.js.
           Использую git, webpack, gulp, brunch.js.
-          Понимаю ООП, MVC, различие REST vs RESTful, MySQL, MongoDB, Firebase.
+          Понимаю ООП, MVC, различие REST vs RESTful.
         </p>
+        <p>Использую в проектах СУБД MySQL, MongoDB, Firebase. </p>
+        <p>Для чистоты JavaScript кода использую Eslint, Python - PEP8 </p>
       </div>
       <h3>Гражданство</h3>
       <div className="aboutMe__other">
