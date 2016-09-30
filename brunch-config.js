@@ -2,7 +2,7 @@ exports.config = {
   hot: true,
 
   files: {
-    javascripts: { joinTo: { 'app.js': /^node_modules/ } },
+    javascripts: { joinTo: 'app.js' },
     stylesheets: { joinTo: 'app.css' },
   },
 
