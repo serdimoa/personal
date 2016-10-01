@@ -23,7 +23,7 @@ function Intro() {
           to="portfolio"
           smooth
           duration={500}
-        >Portfolio
+        >Портфолио
           <i className="material-icons">keyboard_arrow_down</i></Link>
       </div>
     </div>

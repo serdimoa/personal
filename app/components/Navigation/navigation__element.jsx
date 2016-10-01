@@ -3,7 +3,7 @@
  */
 
 import React, { PropTypes } from 'react';
-import { Link } from 'react-scroll';
+import { Link } from 'react-router';
 
 const propTypes = {
   url: PropTypes.string.isRequired,
@@ -17,14 +17,10 @@ class NavigationElement extends React.Component {
 
   render() {
     return (
-      <li className="">
-        <Link
-          activeClass="active"
-          to={this.props.url}
-          smooth
-          duration={500}
-        >{this.props.text}</Link>
-      </li>
+      <Link
+        activeClassName="active"
+        to={this.props.url}
+      >{this.props.text}</Link>
     );
   }
 }

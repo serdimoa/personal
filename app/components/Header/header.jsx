@@ -4,15 +4,25 @@
 
 import React from 'react';
 import Navigation from '../Navigation/navigation';
-import Intro from '../Intro/intro';
 
-function Header() {
-  return (
-    <header>
-      <Navigation />
-      <Intro />
-    </header>
-  );
+const propTypes = {
+  children: React.PropTypes.object,
+};
+
+class Header extends React.Component {
+  static methodsAreOk() {
+    return true;
+  }
+
+  render() {
+    return (
+      <header>
+        <Navigation />
+        {this.props.children}
+      </header>
+    );
+  }
 }
+Header.propTypes = propTypes;
 
 export default Header;

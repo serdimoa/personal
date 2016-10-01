@@ -2,13 +2,14 @@
  * Created by User on 25.09.2016.
  */
 import React from 'react';
+import { Link, IndexLink } from 'react-router';
 import NavigationElement from './navigation__element';
 
 function Navigation() {
   // noinspection Eslint
   return (
     <nav className="navigation">
-      <div className="logo">
+      <Link className="logo" to="/">
         <svg
           width="50px"
           height="42px"
@@ -22,11 +23,12 @@ function Navigation() {
         </svg>
         <span className="logo__text">Kravtsov Dmitry</span><br />
         <span className="logo__job">Web Developer</span>
-      </div>
+      </Link>
 
       <ul>
-        <NavigationElement url="aboutMe" text="Обо мне" />
-        <NavigationElement url="#" text="Скилы" />
+        <li><NavigationElement url="aboutMe" text="Обо мне" /></li>
+        <li><IndexLink activeClassName="active" to="/">Портфолио</IndexLink></li>
+        <li><NavigationElement url="s" text="Скилы" /></li>
       </ul>
     </nav>
   );
