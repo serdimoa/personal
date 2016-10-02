@@ -10,6 +10,32 @@
 	}
 }
 
+.window-blur-enter {
+  opacity: 0.01;
+}
+
+.window-blur-enter.window-blur-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.window-blur-leave {
+  opacity: 1;
+}
+
+.window-blur-leave.window-blur-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
+.window-blur-appear {
+  opacity: 0.01;
+}
+
+.window-blur-appear.window-blur-appear-active {
+  opacity: 1;
+  transition: opacity .5s ease-in;
+}
+
 /*
   Навигация по scss
     1) Стандартные

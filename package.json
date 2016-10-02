@@ -17,6 +17,7 @@
     "hover.css": "^2.0.2",
     "material-design-lite": "^1.2.1",
     "react": "^15.3.2",
+    "react-addons-css-transition-group": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-mixin": "^3.0.5",
     "react-redux": "^4.4.5",
