@@ -12,6 +12,7 @@
     "prod": "brunch build --production"
   },
   "dependencies": {
+    "breakpoint-sass": "^2.7.0",
     "firebase": "^3.4.1",
     "history": "^4.3.0",
     "hover.css": "^2.0.2",
@@ -45,6 +46,8 @@
     "eslint-plugin-react": "^6.3.0",
     "hmr-brunch": "^0.1.0",
     "javascript-brunch": "^2.0.0",
+    "localtunnel": "^1.8.1",
+    "susy": "^2.2.12",
     "uglify-js-brunch": "^2.0.0"
   }
 }

@@ -28,7 +28,7 @@ function Navigation() {
       <ul>
         <li><NavigationElement url="aboutMe" text="Обо мне" /></li>
         <li><IndexLink activeClassName="active" to="/">Портфолио</IndexLink></li>
-        <li><NavigationElement url="s" text="Скилы" /></li>
+        <li><NavigationElement url="contact" text="Контакты" /></li>
       </ul>
     </nav>
   );

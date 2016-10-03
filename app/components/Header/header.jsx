@@ -3,7 +3,6 @@
  */
 
 import React from 'react';
-import CSSTransitionGroup from 'react-addons-css-transition-group';
 import Navigation from '../Navigation/navigation';
 
 const propTypes = {

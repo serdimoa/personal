@@ -13,3 +13,9 @@ $color-orange:#EE964B;
 */
 $font-content: 'Open Sans', sans-serif;
 $font-title: 'PT Sans Narrow', sans-serif;
+
+$phones: max-width 543px;
+$landscape-phones: 544px 767px;
+$tablets: 768px 991px;
+$desktops: 992px 1199px;
+$large-desktops: 2000px;

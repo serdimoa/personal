@@ -14,5 +14,11 @@ exports.config = {
     conventions: {
       ignored: ['node_modules'],
     },
+    browserSync: {
+      port: 3333,
+      logLevel: 'debug',
+      tunnel: 'serdimoa',
+    }
+
   },
 };

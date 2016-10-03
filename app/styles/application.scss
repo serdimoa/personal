@@ -1,14 +1,17 @@
 @import "Settings";
+@import "../../node_modules/breakpoint-sass/stylesheets/breakpoint";
 @import "../../node_modules/hover.css/scss/options";
 @import "../../node_modules/hover.css/scss/mixins";
 @import "../../node_modules/hover.css/scss/hacks";
 @import "../../node_modules/hover.css/scss/effects/border-transitions/underline-from-center";
+
 
 @if $includeClasses {
 	.#{$nameSpace}-underline-from-center {
 		@include underline-from-center();
 	}
 }
+
 
 .window-blur-enter {
   opacity: 0.01;
@@ -64,10 +67,12 @@ body {
 }
 
 // 2) Header
-header {
+.header {
   background: $color-light-blue;
   position: relative;
   height: 100%;
+  max-height:auto;
+  transition: max-height 0.3s ease-in-out
 }
 
 // 2.1) Навигация
@@ -124,8 +129,9 @@ header {
 
   ul {
     margin: 0;
+    float: right;
     li {
-      float: right;
+      
       display: inline;
       padding: 15px;
 
@@ -164,11 +170,66 @@ header {
 
 // 2.2) Интро
 .intro {
+  @include breakpoint($desktops) {
+    height: 400px;
+  }
+
+  @include breakpoint($phones) {
+    height: 300px;
+  }
+
+  @include breakpoint($landscape-phones) {
+    height: 200px;
+  }
+  &--v2{
+    position: relative;
+    width: 100%;
+    height: 100px;
+    text-align: left;
+
+    @include breakpoint($phones) {
+      height: 100px;
+    }
+
+    @include breakpoint($landscape-phones) {
+      height: 100px;
+    }
+
+    &:before {
+      content: '';
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+    }
+
+    .vAlign {
+      display: inline-block;
+      vertical-align: middle;
+      width: 100%;
+    }
+    h1 {
+      @include breakpoint($phones) {
+        font-size: 2em;
+      }
+      font-size: 2.5em;
+      font-family: $font-title;
+      color: $color-white;
+      text-align: left;
+      padding-left: .5em;
+      padding-right: .5em;
+      max-width: 720px;
+      margin: auto;
+      display: block;
+      line-height: 1.4;
+      letter-spacing: 0.04em;
+      margin: auto auto 0.2em;
+    }
+  }
   position: relative;
   width: 100%;
   height: 600px;
   text-align: center;
-
+  
   &:before {
     content: '';
     display: inline-block;
@@ -181,6 +242,9 @@ header {
     width: 100%;
   }
   h1 {
+    @include breakpoint($phones) {
+    font-size: 2em;
+    }
     font-size: 2.5em;
     font-family: $font-title;
     color: $color-white;
@@ -267,6 +331,14 @@ header {
   line-height: 0;
   &>*{
     width: 33.3%;
+    @include breakpoint($phones) {
+      width: 100%;
+    }
+
+    @include breakpoint($landscape-phones) {
+      width: 100%;
+    }
+
   }
   &__item{
     min-height:270px;
@@ -274,12 +346,25 @@ header {
     position: relative;
     word-break: break-word;
     display: inline-block;
+    
+    @include breakpoint($phones) {
+      min-height:225px;
+    }
+
+    @include breakpoint($landscape-phones) {
+      min-height:200px;
+    }
 
     a{
       display: block;
       position: relative;
       text-align: center;
       img{
+        @include breakpoint($landscape-phones) {
+          height: auto;
+          max-height: 50%;
+        }
+
         position: absolute;
         height: 85px;
         top:50%;
@@ -350,6 +435,8 @@ header {
 
 // 3) Обо мне
 .aboutMe {
+  padding-left: .5em;
+  padding-right: .5em;
   max-width: 720px;
   margin: auto;
   h2 {
@@ -368,6 +455,7 @@ header {
     font-size: 1.3rem;
     font-family: $font-title;
   }
+  
   &__content, &__skills, &__other, &__readMore {
     margin-top: .8rem;
     p {
@@ -410,26 +498,87 @@ header {
       }
     }
   }
+  &__content{
+    margin-top: 3em;
+  }
 }
 
 .contacts {
+  padding-left: .5em;
+  padding-right: .5em;
   margin-top: 1.6em;
   padding-top: 1.6em;
   background: $color-white;
   &__content {
-    width: 720px;
+    max-width: 720px;
     margin: auto;
+    .left, .right{
+      width: 50%;
+      float: left;
+      @include breakpoint($phones) {
+        width: 100%;
+      }
+      @include breakpoint($landscape-phones) {
+        width: 50%;
+      }
+    }
     h2 {
       color: $color-dark;
       font-family: $font-title;
       font-size: 1.8em;
     }
-
+    .phone, .email{
+      font-size: 1.2em;
+      line-height: 1.8;
+      font-family: $font-title;
+      &__content{
+        font-size: 1em;
+        text-decoration: none;
+        color: $color-dark;
+        margin-left: .5em;
+        -webkit-transition-duration: 0.3s;
+        -moz-transition-duration: 0.3s;
+        -ms-transition-duration: 0.3s;
+        -o-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+        -webkit-transition-property: color;
+        -moz-transition-property: color;
+        -ms-transition-property: color;
+        -o-transition-property: color;
+        transition-property: color;
+        .material-icons {
+          position: absolute;
+          line-height: 2;
+        }
+        &:hover{
+          color: $color-orange;
+        }
+      }
+    }
     .social {
       &__vk,&__gh {
-        img {
+        svg {
+          height: 50px;
+          width: auto;
           padding: 5px;
+          fill: $color-dark;
+          -webkit-transition-duration: 0.3s;
+          -moz-transition-duration: 0.3s;
+          -ms-transition-duration: 0.3s;
+          -o-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+          -webkit-transition-property: fill;
+          -moz-transition-property: fill;
+          -ms-transition-property: fill;
+          -o-transition-property: fill;
+          transition-property: fill;
         }
+      }
+      &__gh:hover svg{
+        fill: $color-light-blue;
+      }
+      &__vk:hover svg{
+        fill: $color-dark-blue;
       }
     }
   }
