@@ -1,4 +1,5 @@
 @import "Settings";
+@import "../../node_modules/sweetalert/dev/sweetalert";
 @import "../../node_modules/breakpoint-sass/stylesheets/breakpoint";
 @import "../../node_modules/hover.css/scss/options";
 @import "../../node_modules/hover.css/scss/mixins";
@@ -10,6 +11,20 @@
 	.#{$nameSpace}-underline-from-center {
 		@include underline-from-center();
 	}
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
 }
 
 
@@ -575,6 +590,41 @@ body {
       }
       &__vk:hover svg{
         fill: $color-dark-blue;
+      }
+    }
+  }
+
+  &__hire{
+    max-width: 720px;
+    margin: 25px auto 0;
+    font-family: $font-title;
+    p {
+      line-height: 0;
+      word-break: break-word;
+      margin-top: 1.6em;
+      font-size: 1.1em;
+
+      input {
+        font-family: $font-title;
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+        padding: .6em;
+      }
+      textarea{
+        display: block;
+        width: 100%;
+        font-family: $font-title;
+        margin: 10px 0;
+        padding: .6em;
+        line-height: normal;
+      }
+      span{
+        font-family: $font-title;
+        color: $color-dark;
+        &.required{
+          color: $color-orange;
+        }
       }
     }
   }
