@@ -20,10 +20,9 @@ function About() {
         <p><a rel="noopener noreferrer" target="_blank" href="http://xn-----6kcgb1bckzqdbkhbgclghej8q7d.xn--p1ai/">Laravel + HTML + SCSS <i className="material-icons">touch_app</i></a></p>
       </div>
       <div className="aboutMe__other">
-        <p>Также имею опыт в разработке на PHP, Wordpress, OpenCart, JAVA(ANDROID) и node.js.
-          Использую git, webpack, gulp, brunch.js.
-          Понимаю ООП, MVC, различие REST vs RESTful.
-        </p>
+        <p>Также имею опыт в разработке на PHP, Wordpress, OpenCart, JAVA(ANDROID) и node.js.</p>
+        <p>Использую git, webpack, gulp, brunch.js.</p>
+        <p>Понимаю ООП, MVC, различие REST vs RESTful.</p>
         <p>Использую в проектах СУБД MySQL, MongoDB, Firebase.</p>
         <p>Для чистоты JavaScript кода использую Eslint (Airbnb config), Python - PEP8 </p>
       </div>
