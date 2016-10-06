@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import CSSTransitionGroup from 'react-addons-css-transition-group';
-// import Header from './Header/header';
+import Footer from './Footer/footer';
 import Navigation from './Navigation/navigation';
 
 const propTypes = {
@@ -30,6 +30,7 @@ class App extends React.Component {
           </CSSTransitionGroup>
         </div>
         {content}
+        <Footer />
       </div>
     );
   }

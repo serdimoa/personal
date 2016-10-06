@@ -16,7 +16,6 @@ class Contacts extends React.Component {
         text: '',
       },
       showLoading: false,
-     
     };
     this.onSubmitForm = this.onSubmitForm.bind(this);
   }
@@ -28,6 +27,7 @@ class Contacts extends React.Component {
       Name: this.name.value,
       Email: this.email.value,
       Company: this.company.value,
+      Message: this.message.value,
     });
     const xhr = new XMLHttpRequest();
     xhr.open('POST', 'https://formspree.io/serdimoa@gmail.com', true);
@@ -36,6 +36,7 @@ class Contacts extends React.Component {
         if (xhr.status === 200) {
           if (JSON.parse(xhr.responseText).success === 'email sent') {
             this.setState({
+              showLoading: false,
               alert: {
                 show: true,
                 type: 'success',
@@ -45,6 +46,7 @@ class Contacts extends React.Component {
             });
           } else {
             this.setState({
+              showLoading: false,
               alert: {
                 show: true,
                 type: 'error',
@@ -55,6 +57,7 @@ class Contacts extends React.Component {
           }
         } else {
           this.setState({
+            showLoading: false,
             alert: {
               show: true,
               type: 'error',
@@ -81,7 +84,7 @@ class Contacts extends React.Component {
             </p>
             <p className="email">
               Пишите:
-              <a href="mailto:serdimoa@gmail.com" className="email__content">serdimoa @gmail.com<i className="material-icons">touch_app</i></a>
+              <a href="mailto:serdimoa@gmail.com" className="email__content">serdimoa@gmail.com<i className="material-icons">touch_app</i></a>
             </p>
           </div>
           <div className="right">
@@ -173,6 +176,30 @@ class Contacts extends React.Component {
                   </g>
                 </svg>
               </a>
+              <a href="http://www.linkedin.com/in/serdimoa" rel="noopener noreferrer" target="_blank" className="social__li">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="60"
+                  height="60"
+                  viewBox="0 0 60.000003 59.999999"
+                >
+
+                  <g
+                    transform="translate(-11.145513,-6.3548778)"
+                  >
+                    <path
+                      d="m 31.924171,52.168344 0,-27.612275 -9.177809,0 0,27.612275 9.177809,0 z M 27.335227,20.78608 c 3.200492,0 5.19252,-2.120312 5.19252,-4.770092 -0.05969,-2.709424 -1.992028,-4.770908 -5.131805,-4.770908 -3.139455,0 -5.192117,2.061484 -5.192117,4.770908 0,2.64978 1.991625,4.770092 5.071596,4.770092 l 0.05967,0 z"
+                      style={{ fillOpacity: 1, fillRule: 'evenodd', stroke: 'none' }}
+                      id="path28"
+                    />
+                    <path
+                      d="m 34.089744,52.190867 9.110883,0 0,-15.307547 c 0,-0.819236 0.05924,-1.63766 0.299785,-2.223293 0.658635,-1.63685 2.15776,-3.332101 4.674677,-3.332101 3.296814,0 4.615628,2.513677 4.615628,6.198617 l 0,14.664324 9.110145,0 0,-15.717166 c 0,-8.419474 -4.494849,-12.337206 -10.489143,-12.337206 -4.91509,0 -7.072844,2.747279 -8.271684,4.618542 l 0.06086,0 0,-3.975322 -9.110885,0 c 0.119564,2.572077 0,27.411152 0,27.411152 z"
+                      style={{ fillOopacity: 1, fillRule: 'evenodd', stroke: 'none' }}
+                      id="path30"
+                    />
+                  </g>
+                </svg>
+              </a>
             </div>
           </div>
         </div>
@@ -182,7 +209,7 @@ class Contacts extends React.Component {
             <p>Ваш email<span className="required">*</span><input required type="email" ref={(email) => { this.email = email; }} name="email" placeholder="напр. serdimoa@gmail.com" /></p>
             <p>Наименование вашей компании<input type="text" ref={(company) => { this.company = company; }} name="company" placeholder="напр. Airbnb" /></p>
             <p>Сопроводительное сообщение<textarea ref={(message) => { this.message = message; }} name="message" rows="5" defaultValue="" /></p>
-            <input type="submit" className="submit" value="Отправить" />
+            <button type="submit" className={this.state.showLoading ? 'submit loader' : 'submit'}>Отправить</button>
           </form>
         </div>
         <SweetAlert
@@ -191,7 +218,7 @@ class Contacts extends React.Component {
           type={this.state.alert.type ? this.state.alert.type : 'info'}
           text={this.state.alert.text ? this.state.alert.text : ''}
           onConfirm={() => this.setState({ alert: { show: false } })}
-        />
+          />
       </div>
     );
   }
