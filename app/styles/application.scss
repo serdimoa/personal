@@ -627,6 +627,23 @@ body {
         }
       }
     }
+    .submit {
+        background-image: url('/images/send.svg');
+        color: transparent;
+        background-color: transparent;
+        background-repeat: no-repeat;
+        padding: 30px 70px;
+        background-position: 50% 50%;
+        border-color: $color-orange;
+        border-style: solid;
+        &:hover{
+          cursor:pointer;
+        }
+        &:focus {
+          outline: none;
+        }
+        
+    }
   }
 }
 

@@ -16,9 +16,11 @@ class Contacts extends React.Component {
         text: '',
       },
       showLoading: false,
+     
     };
     this.onSubmitForm = this.onSubmitForm.bind(this);
   }
+
 
   onSubmitForm(e) {
     e.preventDefault();
@@ -179,7 +181,7 @@ class Contacts extends React.Component {
             <p>Ваше имя<span className="required">*</span><input required type="text" ref={(name) => { this.name = name; }} name="name" placeholder="напр. Кравцов Дмитрий" /></p>
             <p>Ваш email<span className="required">*</span><input required type="email" ref={(email) => { this.email = email; }} name="email" placeholder="напр. serdimoa@gmail.com" /></p>
             <p>Наименование вашей компании<input type="text" ref={(company) => { this.company = company; }} name="company" placeholder="напр. Airbnb" /></p>
-            <p>Сопроводительное сообщение<textarea ref={(message) => { this.message = message; }} name="message" rows="8" defaultValue="" /></p>
+            <p>Сопроводительное сообщение<textarea ref={(message) => { this.message = message; }} name="message" rows="5" defaultValue="" /></p>
             <input type="submit" className="submit" value="Отправить" />
           </form>
         </div>
