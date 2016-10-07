@@ -31,7 +31,10 @@
     "redux": "~3.2.1",
     "request": "^2.75.0",
     "sass-brunch": "^2.6.3",
-    "sweetalert-react": "^0.4.4"
+    "sweetalert-react": "^0.4.4",
+    "postcss-brunch": "^2.0",
+    "autoprefixer": "^6.3",
+    "csswring": "^5.1"
   },
   "devDependencies": {
     "auto-reload-brunch": "^2.7.0",

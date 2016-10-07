@@ -8,17 +8,15 @@ exports.config = {
 
   plugins: {
     babel: { presets: ['es2015', 'react'] },
-    sass: {
-      modules: false,
+    postcss: {
+      processors: [
+        require('autoprefixer')(['last 8 versions']),
+        require('csswring'),
+      ],
     },
     conventions: {
       ignored: ['node_modules'],
     },
-    browserSync: {
-      port: 3333,
-      logLevel: 'debug',
-      tunnel: 'serdimoa',
-    }
 
   },
 };
